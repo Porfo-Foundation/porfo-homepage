@@ -22,7 +22,7 @@ function HeroSection() {
         <p className="text-center font-semibold text-6xl pb-6">Simply your Crypto Journey with</p>
         <p className="text-center font-medium text-6xl text-primary-100">Porfo</p>
         <div className="w-1/2 mx-auto mt-16">
-          <p className="text-slate-300 font-medium text-center text-lg">From seamless onboarding to efficient key management and deep dapp integration, we've got you covered.</p>
+          <p className="text-slate-300 font-medium text-center text-lg">From seamless onboarding to efficient key management and deep dapp integration, we&apos;ve got you covered.</p>
         </div>
         <div className="flex items-center w-full justify-center mt-10">
           <div className="w-40 h-10 relative flex items-center justify-center group">

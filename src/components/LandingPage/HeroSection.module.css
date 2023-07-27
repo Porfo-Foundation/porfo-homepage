@@ -1,0 +1,70 @@
+.animate_text::before {
+  content: "Porfo";
+  animation-name: animateText;
+  animation-duration: 7.5s;
+  animation-iteration-count: infinite;
+  display: block;
+}
+
+@keyframes animateText {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+    content: "Porfo";
+  }
+  6.66% {
+    opacity: 1;
+    transform: translateY(0px);
+    content: "Porfo";
+  }
+  26.66% {
+    opacity: 1;
+    transform: translateY(0px);
+    content: "Porfo";
+  }
+  33.33% {
+    opacity: 0;
+    transform: translateY(-20px);
+    content: "Porfo";
+  }
+  33.34% {
+    opacity: 0;
+    transform: translateY(20px);
+    content: "On Chain Search";
+  }
+  40% {
+    opacity: 1;
+    transform: translateY(0px);
+    content: "On Chain Search";
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(0px);
+    content: "On Chain Search";
+  }
+  66.66% {
+    opacity: 0;
+    transform: translateY(-20px);
+    content: "On Chain Search";
+  }
+  66.67% {
+    opacity: 0;
+    transform: translateY(20px);
+    content: "Portfolio Management";
+  }
+  73.33% {
+    opacity: 1;
+    transform: translateY(0px);
+    content: "Portfolio Management";
+  }
+  93.33% {
+    opacity: 1;
+    transform: translateY(0px);
+    content: "Portfolio Management";
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-20px);
+    content: "Portfolio Management";
+  }
+}

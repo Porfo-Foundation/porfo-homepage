@@ -1,4 +1,5 @@
 import React from "react";
+import styles from "./HeroSection.module.css";
 
 function HeroSection() {
   const partners = [
@@ -20,7 +21,7 @@ function HeroSection() {
       <div></div>
       <div>
         <p className="text-center font-semibold text-6xl pb-6">Simply your Crypto Journey with</p>
-        <p className="text-center font-medium text-6xl text-primary-100">Porfo</p>
+        <p className={["text-center font-medium text-6xl text-primary-100", styles.animate_text].join(" ")}></p>
         <div className="w-1/2 mx-auto mt-16">
           <p className="text-slate-300 font-medium text-center text-lg">From seamless onboarding to efficient key management and deep dapp integration, we&apos;ve got you covered.</p>
         </div>

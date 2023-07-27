@@ -8,6 +8,14 @@ import styles from "./Navbar.module.css";
 function Navbar() {
   const router = useRouter();
   const [isOpen, setIsOpen] = useState(false);
+  const GetEarlyAccessButton = () => {
+    return (
+      <Link href="/get-started" className="flex flex-col items-end">
+        <button className="py-3">Get early access</button>
+        <div className="h-px w-3/4 bg-white"></div>
+      </Link>
+    );
+  };
   return (
     <>
       <div className="justify-between items-center max-w-[1740px] mx-auto px-12 py-4 hidden md:flex">
@@ -25,10 +33,7 @@ function Navbar() {
             </Link>
           ))}
         </div>
-        <div className="flex flex-col items-end">
-          <button className="py-3">Get early access</button>
-          <div className="h-px w-3/4 bg-white"></div>
-        </div>
+        <GetEarlyAccessButton />
       </div>
       <div className="flex md:hidden justify-between items-center px-4 sm:px-8">
         <img src="/logo.svg" className="w-32 py-4" />
@@ -39,6 +44,7 @@ function Navbar() {
             <div className={["bg-primary-100 flex flex-col items-end pr-4 z-50 relative", styles.navbar_mobile].join(" ")}>
               <img src="/landing-page/close-button.svg" className="my-5 cursor-pointer" onClick={() => setIsOpen(false)} alt="close button icon" />
               <div className="flex flex-col gap-8 text-white mt-4">
+                <GetEarlyAccessButton />
                 {navbarLinks.map((item, index) => (
                   <button className="text-end" key={index}>
                     {item.name}

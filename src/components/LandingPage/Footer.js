@@ -3,7 +3,7 @@ import React from "react";
 function Footer() {
   return (
     <div className="bg-gradient-to-t from-[#a33b6f36] to-black">
-      <div className="max-w-screen-2xl mx-auto px-6 grid grid-cols-12 text-[#727272] py-40 gap-y-8 text-sm sm:text-base">
+      <div className="max-w-screen-2xl mx-auto px-6 grid grid-cols-12 text-[#727272] pt-40 pb-16 2xl:pb-40 gap-y-8 text-sm sm:text-base">
         <div className="col-span-12 sm:col-span-4 lg:col-span-6 flex flex-row justify-between items-center sm:flex-col">
           <div>
             <img src="/logo.svg" className="mb-4" />

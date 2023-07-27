@@ -21,7 +21,7 @@ function Roadmap() {
   ];
   return (
     <div className="max-w-screen-xl mx-auto px-6">
-      <p className="font-bold text-3xl xl:text-5xl mb-16">Our Roadmap</p>
+      <p className="font-bold text-3xl 2xl:text-5xl mb-16">Our Roadmap</p>
       <div className="flex flex-row relative px-8">
         <div className="w-1.5 h-[500px] bg-[#533483] rounded-full"></div>
         <div className="absolute top-0 -left-[22px]">

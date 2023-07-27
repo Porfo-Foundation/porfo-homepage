@@ -38,7 +38,6 @@ function DescriptionSection() {
     // transform: `translateY(${scrollIndex * (height / 5)}px)`,
     height: `${(height / slideshow.length) * (scrollIndex + 1)}px`,
   };
-  console.log((height / slideshow.length) * scrollIndex);
   return (
     <div className="max-w-screen-xl mx-auto px-6 grid grid-cols-2 gap-6 py-8">
       <div className="flex items-center justify-center col-span-2 lg:col-span-1">

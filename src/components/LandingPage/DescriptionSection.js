@@ -16,26 +16,24 @@ function DescriptionSection() {
 
   useEffect(() => {
     setHeight(ref.current.clientHeight);
-  });
+  }, [ref]);
   const divStyle = {
     transform: `translateY(${scrollIndex * (height / 5)}px)`,
     transition: "transform 0.5s ease",
   };
   return (
-    <div className="max-w-screen-xl mx-auto px-6 grid grid-cols-2 py-8">
-      <div className="flex items-center justify-center">
-        <p className="font-medium text-2xl leading-relaxed">
+    <div className="max-w-screen-xl mx-auto px-6 grid grid-cols-2 gap-6 py-8">
+      <div className="flex items-center justify-center col-span-2 sm:col-span-1">
+        <p className="font-medium text-lg md:text-2xl leading-relaxed text-center sm:text-start">
           Get a personal Assistant which work on intent based AI giving you users the ability to express objectives of executing complex trades or querying on chain data.
         </p>
       </div>
-      <div className="flex justify-center items-center gap-x-10">
+      <div className="flex justify-center items-center gap-x-10 col-span-2 sm:col-span-1">
         <div className="flex flex-col items-center justify-center bg-[#101010] rounded-3xl w-fit py-4 px-8">
           <p className="font-bold text-2xl leading-relaxed opacity-80 text-center mb-4">On Chain Intelligence</p>
-          {scrollIndex == 0 && <img src="/landing-page/message.png" className={styles.slide_in} />}
-          {scrollIndex == 1 && <img src="/landing-page/message.png" className={styles.slide_in} />}
-          {scrollIndex == 2 && <img src="/landing-page/message.png" className={styles.slide_in} />}
-          {scrollIndex == 3 && <img src="/landing-page/message.png" className={styles.slide_in} />}
-          {scrollIndex == 4 && <img src="/landing-page/message.png" className={styles.slide_in} />}
+          {images?.map((image, index) => (
+            <>{scrollIndex == index && <img src={image} className={styles.slide_in} />}</>
+          ))}
         </div>
         <div className="flex flex-col items-center h-4/5">
           <p>0{scrollIndex + 1}</p>

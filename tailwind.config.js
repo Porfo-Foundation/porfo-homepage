@@ -12,6 +12,16 @@ module.exports = {
           100: "#785F9E",
         },
       },
+      backgroundSize: {
+        "size-200": "200% 200%",
+      },
+      backgroundPosition: {
+        "pos-0": "0% 100%",
+        "pos-100": "100% 0%",
+      },
+      screens: {
+        xs: "420px",
+      },
     },
   },
   plugins: [],

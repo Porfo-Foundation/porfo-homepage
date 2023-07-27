@@ -3,12 +3,14 @@ import React from "react";
 function Footer() {
   return (
     <div className="bg-gradient-to-t from-[#a33b6f36] to-black">
-      <div className="max-w-screen-2xl mx-auto px-6 grid grid-cols-12 text-[#727272] py-40">
-        <div className="col-span-6">
-          <img src="/logo.svg" className="mb-4" />
-          <p>On-Chain Search</p>
-          <p>Made Easy</p>
-          <div className="flex gap-x-5 mt-20">
+      <div className="max-w-screen-2xl mx-auto px-6 grid grid-cols-12 text-[#727272] py-40 gap-y-8 text-sm sm:text-base">
+        <div className="col-span-12 sm:col-span-4 lg:col-span-6 flex flex-row justify-between items-center sm:flex-col">
+          <div>
+            <img src="/logo.svg" className="mb-4" />
+            <p>On-Chain Search</p>
+            <p>Made Easy</p>
+          </div>
+          <div className="flex gap-x-5 mt-0 sm:mt-20">
             <button>
               <img src="/landing-page/discord-white.svg" />
             </button>
@@ -23,13 +25,13 @@ function Footer() {
             </button>
           </div>
         </div>
-        <div className="col-span-3 font-medium">
-          <p className="text-white font-bold mb-6 text-xl mt-3">Contact Us</p>
+        <div className="col-span-7 sm:col-span-4 lg:col-span-3 font-medium">
+          <p className="text-white font-bold mb-6 text-base sm:text-xl mt-3">Contact Us</p>
           <p className="mb-2">abcdefsdfs@gmail.com</p>
           <p>+919868686572</p>
         </div>
-        <div className="col-span-3 font-medium">
-          <p className="text-white font-bold mb-6 text-xl mt-3">Important Links</p>
+        <div className="col-span-5 sm:col-span-4 lg:col-span-3 font-medium">
+          <p className="text-white font-bold mb-6 text-base sm:text-xl mt-3">Important Links</p>
           <p className="mb-2">Documentation</p>
           <p className="mb-2">Support</p>
           <p>API</p>

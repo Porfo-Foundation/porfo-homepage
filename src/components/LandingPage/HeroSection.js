@@ -20,10 +20,10 @@ function HeroSection() {
     <div className="max-w-screen-xl mx-auto px-6 min-h-[calc(100vh-81px)] flex flex-col justify-between pb-20">
       <div></div>
       <div>
-        <p className="text-center font-semibold text-6xl pb-6">Simply your Crypto Journey with</p>
-        <p className={["text-center font-medium text-6xl text-primary-100", styles.animate_text].join(" ")}></p>
-        <div className="w-1/2 mx-auto mt-16">
-          <p className="text-slate-300 font-medium text-center text-lg">From seamless onboarding to efficient key management and deep dapp integration, we&apos;ve got you covered.</p>
+        <p className="text-center font-semibold text-4xl xl:text-6xl pb-3 xl:pb-6">Simply your Crypto Journey with</p>
+        <p className={["text-center font-medium text-4xl xl:text-6xl text-primary-100 h-20 xs:h-full", styles.animate_text].join(" ")}></p>
+        <div className="w-4/5 sm:w-1/2 mx-auto mt-8 xl:mt-16">
+          <p className="text-slate-300 font-medium text-center text-sm xl:text-lg">From seamless onboarding to efficient key management and deep dapp integration, we&apos;ve got you covered.</p>
         </div>
         <div className="flex items-center w-full justify-center mt-10">
           <div className="w-40 h-10 relative flex items-center justify-center group">

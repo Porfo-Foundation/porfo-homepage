@@ -42,13 +42,15 @@ function DescriptionSection() {
     <div className="max-w-screen-xl mx-auto px-6 grid grid-cols-2 gap-6 py-8">
       <div className="flex items-center justify-center col-span-2 lg:col-span-1">
         {slideshow?.map((slide, index) => (
-          <>{scrollIndex == index && <p className={["font-medium text-lg md:text-2xl leading-relaxed text-center sm:text-start", styles.slide_in].join(" ")}>{slide.description}</p>}</>
+          <>
+            {scrollIndex == index && <p className={["font-medium text-lg md:text-2xl leading-relaxed text-center sm:text-start h-[176px] xs:h-fit", styles.slide_in].join(" ")}>{slide.description}</p>}
+          </>
         ))}
       </div>
-      <div className="flex justify-center items-center gap-x-10 col-span-2 lg:col-span-1">
-        <div className="flex flex-col items-center justify-center bg-[#101010] rounded-3xl w-fit py-4 px-8">
+      <div className="flex justify-center items-center gap-x-2 sm:gap-x-10 col-span-2 lg:col-span-1">
+        <div className="flex flex-col items-center justify-center bg-[#101010] rounded-3xl w-fit py-4 px-4 sm:px-8">
           {slideshow?.map((slide, index) => (
-            <>{scrollIndex == index && <p className={["font-bold text-2xl leading-relaxed opacity-80 text-center mb-4", styles.fade].join(" ")}>{slide.title}</p>}</>
+            <>{scrollIndex == index && <p className={["font-bold text-2xl leading-relaxed opacity-80 text-center -mb-4 xs:mb-4 h-20 xs:h-fit", styles.fade].join(" ")}>{slide.title}</p>}</>
           ))}
           {slideshow?.map((slide, index) => (
             <>{scrollIndex == index && <img src={slide.image} className={["w-96 h-72", styles.slide_in].join(" ")} />}</>

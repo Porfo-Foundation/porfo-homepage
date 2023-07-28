@@ -1,23 +1,56 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import navbarLinks from "@/constants/navbarLinks.json";
 import Link from "next/link";
-import { useRouter } from "next/router";
 import styles from "./Navbar.module.css";
+import UIModal from "@/common/UIModal";
+import GetStartedModal from "./GetStartedModal";
 
 function Navbar() {
-  const router = useRouter();
   const [isOpen, setIsOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("");
+  const [isGetStartedModalOpen, setIsGetStartedModalOpen] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    const sections = document.querySelectorAll("section");
+
+    sections.forEach((section) => {
+      observer.observe(section);
+    });
+
+    return () => {
+      if (observer) {
+        observer.disconnect();
+      }
+    };
+  }, []);
+
+  console.log(activeSection);
+
   const GetEarlyAccessButton = () => {
     return (
-      <Link href="/get-started" className="flex flex-col items-end">
-        <button className="py-3">Get early access</button>
+      <button onClick={() => setIsGetStartedModalOpen(true)} className="flex flex-col items-end">
+        <p className="py-3">Get early access</p>
         <div className="h-px w-3/4 bg-white"></div>
-      </Link>
+      </button>
     );
   };
   return (
     <>
+      <UIModal isOpen={isGetStartedModalOpen} onClose={() => setIsGetStartedModalOpen(false)}>
+        <GetStartedModal />
+      </UIModal>
       <div className="justify-between items-center max-w-[1740px] mx-auto px-12 py-4 hidden md:flex">
         <img src="/logo.svg" />
         <div className="flex gap-x-6">
@@ -26,7 +59,7 @@ function Navbar() {
               key={index}
               href={link?.link}
               className={`pl-0.5 pr-1.5 pb-[3px] ${
-                router.asPath == link?.link ? "border-b border-white font-bold opacity-100" : "border-b border-transparent font-light opacity-60"
+                `#${activeSection}` == link?.link ? "border-b border-white font-bold opacity-100" : "border-b border-transparent font-light opacity-60"
               } hover:opacity-100 transition-all`}
             >
               {link?.name}
@@ -46,9 +79,9 @@ function Navbar() {
               <div className="flex flex-col gap-8 text-white mt-4">
                 <GetEarlyAccessButton />
                 {navbarLinks.map((item, index) => (
-                  <button className="text-end" key={index}>
+                  <Link href={item?.link} className="text-end" key={index} onClick={() => setIsOpen(false)}>
                     {item.name}
-                  </button>
+                  </Link>
                 ))}
               </div>
             </div>

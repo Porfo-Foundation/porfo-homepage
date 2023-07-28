@@ -47,7 +47,7 @@ function FeaturesSection() {
   return (
     <div className="max-w-screen-xl mx-auto px-6 pt-20 xl:pt-52">
       <p className="font-bold text-3xl 2xl:text-5xl">Built-in features</p>
-      <div className="grid grid-cols-2 mt-28 gap-6 md:gap-0">
+      <div className="grid grid-cols-2 mt-10 sm:mt-28 gap-6 md:gap-0">
         <div className="hidden md:block">
           {features?.slice(0, 3)?.map((feature, index) => (
             <div className={`${index == 0 ? "md:mr-20 md:mt-24" : index == 1 ? "md:ml-20 md:mt-16" : "md:ml-10 md:mr-10 md:mt-16"}`} key={index}>

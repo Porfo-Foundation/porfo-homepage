@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./HeroSection.module.css";
 import { useRouter } from "next/router";
 import Link from "next/link";
+import UIModal from "@/common/UIModal";
+import GetStartedModal from "./GetStartedModal";
 
 function HeroSection() {
   const router = useRouter();
@@ -19,8 +21,12 @@ function HeroSection() {
       image: "4",
     },
   ];
+  const [isGetStartedModalOpen, setIsGetStartedModalOpen] = useState(false);
   return (
-    <div className="max-w-screen-xl mx-auto px-6 min-h-[calc(100vh-81px)] flex flex-col justify-between pb-20">
+    <div className="max-w-screen-xl mx-auto px-6 min-h-screen flex flex-col justify-between pb-20">
+      <UIModal isOpen={isGetStartedModalOpen} onClose={() => setIsGetStartedModalOpen(false)}>
+        <GetStartedModal />
+      </UIModal>
       <div></div>
       <div>
         <p className="text-center font-semibold text-4xl 2xl:text-6xl pb-3 2xl:pb-6">Simply your Crypto Journey with</p>
@@ -31,12 +37,12 @@ function HeroSection() {
         <div className="flex items-center w-full justify-center mt-6 2xl:mt-10">
           <div className="w-40 h-10 relative flex items-center justify-center group">
             <div className="w-10 h-10 bg-gradient-to-tr from-[#A33B6F] to-[#FF4D00] absolute right-1 top-0 rounded-full group-hover:w-40 transition-all duration-300"></div>
-            <Link href="/get-started" className="flex items-center text-sm absolute top-0 left-0 w-full pl-5">
+            <button onClick={() => setIsGetStartedModalOpen(true)} className="flex items-center text-sm absolute top-0 left-0 w-full pl-5">
               <p className="group-hover:text-black transition-all duration-300">Get Started</p>
               <div className="h-10 w-10 flex items-center justify-center rounded-full ml-4">
                 <img src="/landing-page/right-arrow.svg" />
               </div>
-            </Link>
+            </button>
           </div>
         </div>
       </div>

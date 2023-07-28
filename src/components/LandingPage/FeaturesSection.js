@@ -35,7 +35,7 @@ function FeaturesSection() {
   ];
   const FeatureCard = ({ title, description, image }) => {
     return (
-      <div className="bg-[#06010E] border border-white border-opacity-10 rounded-xl h-full">
+      <div className="bg-[#06010E] border border-white border-opacity-10 rounded-xl h-full relative -z-[1]">
         <img src={`/landing-page/feature-${image}.svg`} className="w-full" />
         <div className="px-8 pb-3">
           <p className="from-[rgba(255,255,255,0.7)] to-[rgba(255,255,255,1)] inline-block text-transparent bg-clip-text bg-gradient-to-t text-2xl font-light mb-4">{title}</p>

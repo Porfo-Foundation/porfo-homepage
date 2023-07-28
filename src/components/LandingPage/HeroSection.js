@@ -1,12 +1,9 @@
 import React, { useState } from "react";
 import styles from "./HeroSection.module.css";
-import { useRouter } from "next/router";
-import Link from "next/link";
 import UIModal from "@/common/UIModal";
 import GetStartedModal from "./GetStartedModal";
 
 function HeroSection() {
-  const router = useRouter();
   const partners = [
     {
       image: "1",
@@ -30,7 +27,7 @@ function HeroSection() {
       <div></div>
       <div>
         <p className="text-center font-semibold text-4xl 2xl:text-6xl pb-3 2xl:pb-6">Simply your Crypto Journey with</p>
-        <p className={["text-center font-medium text-4xl 2xl:text-6xl text-primary-100 h-20 xs:h-full", styles.animate_text].join(" ")}></p>
+        <p className={["text-center font-medium text-4xl 2xl:text-6xl text-primary-100 h-20 min-[453px]:h-full", styles.animate_text].join(" ")}></p>
         <div className="w-4/5 sm:w-1/2 mx-auto mt-6 2xl:mt-16">
           <p className="text-slate-300 font-medium text-center text-sm xl:text-lg">From seamless onboarding to efficient key management and deep dapp integration, we&apos;ve got you covered.</p>
         </div>

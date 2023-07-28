@@ -48,7 +48,7 @@ function DescriptionSection() {
         ))}
       </div>
       <div className="flex justify-center items-center gap-x-2 sm:gap-x-10 col-span-2 lg:col-span-1">
-        <div className="flex flex-col items-center justify-center bg-[#101010] rounded-3xl w-fit py-4 px-4 sm:px-8">
+        <div className="flex flex-col items-center justify-center bg-[#101010] rounded-3xl w-fit py-4 px-4 sm:px-8 -z-[1]">
           {slideshow?.map((slide, index) => (
             <>{scrollIndex == index && <p className={["font-bold text-2xl leading-relaxed opacity-80 text-center -mb-4 xs:mb-4 h-20 xs:h-fit", styles.fade].join(" ")}>{slide.title}</p>}</>
           ))}

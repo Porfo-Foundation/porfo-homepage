@@ -8,6 +8,7 @@ import Roadmap from "./Roadmap";
 import BlockChainsSection from "./BlockChainsSection";
 import TeamMembers from "./TeamMembers";
 import Footer from "./Footer";
+import CursorGlow from "@/common/CursorGlow";
 
 function LandingPage() {
   return (
@@ -31,6 +32,9 @@ function LandingPage() {
         <TeamMembers />
       </section>
       <Footer />
+      <div className="lg:block hidden">
+        <CursorGlow></CursorGlow>
+      </div>
     </div>
   );
 }

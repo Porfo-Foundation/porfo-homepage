@@ -21,6 +21,7 @@ body {
   color: white;
   scroll-behavior: smooth;
   scrollbar-gutter: stable;
+  overflow-x: hidden;
 }
 
 .modal {
@@ -42,4 +43,16 @@ body {
 }
 .no-scrollbar::-webkit-scrollbar {
   display: none; /* Safari and Chrome */
+}
+
+.sun {
+  height: 300px;
+  width: 300px;
+  background: rgb(246, 232, 13);
+  background: radial-gradient(circle, rgba(223, 71, 39, 0.3) 0%, rgba(255, 255, 255, 0) 70%);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+  z-index: -1;
 }

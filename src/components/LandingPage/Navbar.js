@@ -36,8 +36,6 @@ function Navbar() {
     };
   }, []);
 
-  console.log(activeSection);
-
   const GetEarlyAccessButton = () => {
     return (
       <button onClick={() => setIsGetStartedModalOpen(true)} className="flex flex-col items-end">

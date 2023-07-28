@@ -7,8 +7,6 @@ const CursorGlow = () => {
     setCursorPosition({ x: e.pageX, y: e.pageY });
   };
 
-  console.log(cursorPosition);
-
   useEffect(() => {
     document.addEventListener("mousemove", handleMouseMove);
     return () => {

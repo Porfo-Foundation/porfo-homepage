@@ -38,9 +38,9 @@ function TeamMembers() {
       image: "/landing-page/chirag.jpeg",
     },
     {
-      name: "Ankit Khatana",
-      role: "Advisor, COO The Wasserstoff",
-      image: "/landing-page/ankit.jpg"
+      name: "Ayush Tripathi",
+      role: "AI Lead",
+      image: "/landing-page/memoji-1.png",
     },
     {
       name: "Sushant Shukla",
@@ -56,6 +56,11 @@ function TeamMembers() {
       name: "Vidhata Trivedi",
       role: "Advisor, CTO The Wasserstoff",
       image: "/landing-page/memoji-1.png"
+    },
+    {
+      name: "Ankit Khatana",
+      role: "Advisor, COO The Wasserstoff",
+      image: "/landing-page/ankit.jpg"
     }
   ];
   return (
@@ -66,7 +71,7 @@ function TeamMembers() {
           <div key={index} className="col-span-3 sm:col-span-2 bg-[rgba(77,74,74,0.27)] rounded-xl flex flex-col items-center py-6">
             <img src={member.image} className="rounded-full max-w-[30%] min-w-[30%]" />
             <p className="font-medium text-[#DAD5D5] mt-3">{member.name}</p>
-            <p className="text-sm opacity-70 mb-3">{member.role}</p>
+            <p className="text-sm opacity-70 mb-3 text-center">{member.role}</p>
             {/* <div className="flex gap-x-6 bg-[rgba(255,255,255,0.04)] px-6 py-3 rounded-full">
               <button>
                 <img src="/landing-page/facebook.svg" />

@@ -50,7 +50,7 @@ function Navbar() {
         <GetStartedModal />
       </UIModal>
       <div className="justify-between items-center max-w-[1740px] mx-auto px-12 py-4 hidden md:flex">
-        <img src="/logo.svg" />
+        <img src="/logo1.svg" />
         <div className="flex gap-x-6">
           {navbarLinks?.map((link, index) => (
             <Link

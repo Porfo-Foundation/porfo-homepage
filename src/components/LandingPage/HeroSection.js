@@ -45,6 +45,7 @@ function HeroSection() {
       </div>
       <div className="flex flex-col items-center">
       <p className="from-[#F679B7] to-[#A33B6F] inline-block text-transparent bg-clip-text bg-gradient-radial mt-6">In Collaboration With</p>
+      <br />
         <div className="flex gap-x-10">
           {partners?.map((partner, index) => (
             <img src={`/landing-page/${partner.image}.png`} className="w-12 h-12 2xl:w-14 2xl:h-14" key={index} />

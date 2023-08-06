@@ -3,33 +3,33 @@ import React from "react";
 function TeamMembers() {
   const team = [
     {
-      name: "Name",
-      role: "Founder",
+      name: "Aditya Jain",
+      role: "Founder, CEO",
+      image: "/landing-page/aditya.jpeg",
+    },
+    {
+      name: "Raghav Sawhney",
+      role: "Co-Founder, CBO",
+      image: "/landing-page/raghav.jpeg",
+    },
+    {
+      name: "Soneshwar Singh",
+      role: "CTO",
+      image: "/landing-page/soneshwar.jpeg",
+    },
+    {
+      name: "Sarvottam Mishra",
+      role: "CIO",
       image: "/landing-page/memoji-1.png",
     },
     {
-      name: "Name",
-      role: "CEO",
+      name: "Sushil Ray",
+      role: "Lead Developer",
       image: "/landing-page/memoji-2.png",
     },
     {
-      name: "Name",
-      role: "CFO",
-      image: "/landing-page/memoji-2.png",
-    },
-    {
-      name: "Name",
-      role: "Founder",
-      image: "/landing-page/memoji-1.png",
-    },
-    {
-      name: "Name",
-      role: "CEO",
-      image: "/landing-page/memoji-2.png",
-    },
-    {
-      name: "Name",
-      role: "CFO",
+      name: "Chirag Sharma",
+      role: "Lead Developer",
       image: "/landing-page/memoji-2.png",
     },
   ];

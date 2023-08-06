@@ -51,6 +51,11 @@ function TeamMembers() {
       name: "Rhic Choudhary",
       role: "Advisor, Head Of Sales Biconomy",
       image: "/landing-page/rhic.jpg"
+    },
+    {
+      name: "Vidhata Trivedi",
+      role: "Advisor, CTO The Wasserstoff",
+      image: "/landing-page/memoji-1.png"
     }
   ];
   return (

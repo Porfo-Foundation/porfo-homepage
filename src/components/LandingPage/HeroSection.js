@@ -6,16 +6,16 @@ import GetStartedModal from "./GetStartedModal";
 function HeroSection() {
   const partners = [
     {
-      image: "1",
+      image: "partner-1",
     },
     {
-      image: "2",
+      image: "uatu",
     },
     {
-      image: "3",
+      image: "partner-3",
     },
     {
-      image: "4",
+      image: "wstf",
     },
   ];
   const [isGetStartedModalOpen, setIsGetStartedModalOpen] = useState(false);
@@ -44,12 +44,13 @@ function HeroSection() {
         </div>
       </div>
       <div className="flex flex-col items-center">
+      <p className="from-[#F679B7] to-[#A33B6F] inline-block text-transparent bg-clip-text bg-gradient-radial mt-6">In Collaboration With</p>
         <div className="flex gap-x-10">
           {partners?.map((partner, index) => (
-            <img src={`/landing-page/partner-${partner.image}.png`} className="w-10 h-10 2xl:w-12 2xl:h-12" key={index} />
+            <img src={`/landing-page/${partner.image}.png`} className="w-12 h-12 2xl:w-14 2xl:h-14" key={index} />
           ))}
         </div>
-        <p className="from-[#F679B7] to-[#A33B6F] inline-block text-transparent bg-clip-text bg-gradient-radial mt-6">Our Partners</p>
+        <p className="from-[#F679B7] to-[#A33B6F] inline-block text-transparent bg-clip-text bg-gradient-radial mt-6">Incubated @ <a href="https://thewasserstoff.com" style={{textDecoration : "none"}} target="_blank">The Wasserstoff</a></p>
       </div>
     </div>
   );

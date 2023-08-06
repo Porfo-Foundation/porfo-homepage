@@ -25,7 +25,7 @@ function TeamMembers() {
     {
       name: "Sushil Ray",
       role: "UX Manager",
-      image: "/landing-page/memoji-2.png",
+      image: "/landing-page/sushil.jpeg",
     },
     {
       name: "Chirag Sharma",

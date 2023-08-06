@@ -32,7 +32,9 @@ function Footer() {
         </div> */}
         <div className="col-span-5 sm:col-span-4 lg:col-span-3 font-medium">
           <p className="text-white font-bold mb-6 text-base sm:text-xl mt-3">Important Links</p>
-          <p className="mb-2">Documentation</p>
+          <button className="mb-2" onClick={() => window.open("https://porfo.gitbook.io/v1/introduction/what-is-porfo", "_blank")}>
+            Documentation
+          </button>
           <p className="mb-2">Support</p>
           <p>API</p>
         </div>

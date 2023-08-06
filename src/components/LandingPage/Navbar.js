@@ -38,7 +38,7 @@ function Navbar() {
 
   const GetEarlyAccessButton = () => {
     return (
-      <button onClick={() => setIsGetStartedModalOpen(true)} className="flex flex-col items-end">
+      <button onClick={() => window.open("https://porfo-waitlist.kickoffpages.com/", "_blank")} className="flex flex-col items-end">
         <p className="py-3">Get early access</p>
         <div className="h-px w-3/4 bg-white"></div>
       </button>

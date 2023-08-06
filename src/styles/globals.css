@@ -22,6 +22,7 @@ body {
   scroll-behavior: smooth;
   scrollbar-gutter: stable;
   overflow-x: hidden;
+  position: relative;
 }
 
 .modal {
@@ -55,4 +56,23 @@ body {
   background-position: center;
   position: absolute;
   z-index: -1;
+}
+
+.star {
+  position: fixed;
+  background-color: #fff;
+  width: 2px;
+  height: 2px;
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+  animation: twinkle 1.5s infinite alternate;
+  z-index: 0;
+}
+
+@keyframes twinkle {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }

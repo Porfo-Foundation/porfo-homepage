@@ -9,13 +9,13 @@ export default function Home() {
         <title>Porfo - You digital assets investment assistant!</title>
         <meta
           name="description"
-          content="Porfo stands out with as powerful search engine, driven by state-of-the-art intent based artificial intelligence. Acting as your personal cryptocurrency assistant, it provides detailed information on wallets, tokens, blockchain addresses, and transactions, while also revealing social indicators about projects."
+          content="Your smart wallet and investment assistant, powered by cutting-edge AI. As an intent-based chat assistant, Porfo simplifies wallet management, provides trade recommendations, and offers detailed insights into wallets, tokens, and transactions. Experience a new level of cryptocurrency management with our AI-driven search engine that reveals key social indicators about projects."
         />
-        <meta property="og:title" content="Porfo - You digital assets investment assistant!" />
+        <meta property="og:title" content="Porfo - Smart Assistant for Your Investment !" />
         <meta property="og:url" content="https://www.porfo.app/" />
         <meta
           property="og:description"
-          content="Porfo stands out with as powerful search engine, driven by state-of-the-art intent based artificial intelligence. Acting as your personal cryptocurrency assistant, it provides detailed information on wallets, tokens, blockchain addresses, and transactions, while also revealing social indicators about projects."
+          content="Your smart wallet and investment assistant, powered by cutting-edge AI. As an intent-based chat assistant, Porfo simplifies wallet management, provides trade recommendations, and offers detailed insights into wallets, tokens, and transactions. Experience a new level of cryptocurrency management with our AI-driven search engine that reveals key social indicators about projects."
         />
         <meta property="og:image" content={"/logo-full.png"} />
         <meta property="og:image:width" content="400" />

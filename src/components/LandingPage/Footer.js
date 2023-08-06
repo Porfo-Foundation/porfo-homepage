@@ -25,11 +25,11 @@ function Footer() {
             </button>
           </div>
         </div>
-        <div className="col-span-7 sm:col-span-4 lg:col-span-3 font-medium">
+        {/* <div className="col-span-7 sm:col-span-4 lg:col-span-3 font-medium">
           <p className="text-white font-bold mb-6 text-base sm:text-xl mt-3">Contact Us</p>
           <p className="mb-2">abcdefsdfs@gmail.com</p>
           <p>+919868686572</p>
-        </div>
+        </div> */}
         <div className="col-span-5 sm:col-span-4 lg:col-span-3 font-medium">
           <p className="text-white font-bold mb-6 text-base sm:text-xl mt-3">Important Links</p>
           <p className="mb-2">Documentation</p>

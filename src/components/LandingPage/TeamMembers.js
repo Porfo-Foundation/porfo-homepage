@@ -18,6 +18,11 @@ function TeamMembers() {
       image: "/landing-page/soneshwar.jpeg",
     },
     {
+      name: "Pritesh Panda",
+      role: "CPO",
+      image: "/landing-page/pritesh.jpeg"
+    },
+    {
       name: "Sarvottam Mishra",
       role: "CIO",
       image: "/landing-page/memoji-1.png",
@@ -32,6 +37,21 @@ function TeamMembers() {
       role: "Tech Lead",
       image: "/landing-page/chirag.jpeg",
     },
+    {
+      name: "Ankit Khatana",
+      role: "Advisor, COO The Wasserstoff",
+      image: "/landing-page/ankit.jpg"
+    },
+    {
+      name: "Sushant Shukla",
+      role: "Advisor, CEO The Wasserstoff",
+      image: "/landing-page/sushant.jpg"
+    },
+    {
+      name: "Rhic Choudhary",
+      role: "Advisor, Head Of Sales Biconomy",
+      image: "/landing-page/rhic.jpg"
+    }
   ];
   return (
     <div className="max-w-screen-xl mx-auto px-6 min-h-screen flex flex-col justify-center">

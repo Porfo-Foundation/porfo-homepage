@@ -32,13 +32,15 @@ function HeroSection() {
           <p className="text-slate-300 font-medium text-center text-sm xl:text-lg">From seamless onboarding to efficient key management and deep dapp integration, we&apos;ve got you covered.</p>
         </div>
         <div className="flex items-center w-full justify-center mt-6 2xl:mt-10">
-          <div className="w-40 h-10 relative flex items-center justify-center group">
-            <div className="w-10 h-10 bg-gradient-to-tr from-[#A33B6F] to-[#FF4D00] absolute right-1 top-0 rounded-full group-hover:w-40 transition-all duration-300"></div>
-            <button onClick={() => window.open("https://porfo-waitlist.kickoffpages.com/", "_blank")} className="flex items-center text-sm absolute top-0 left-0 w-full pl-5">
-              <p className="group-hover:text-black transition-all duration-300">Get Started</p>
-              <div className="h-10 w-10 flex items-center justify-center rounded-full ml-4">
-                <img src="/landing-page/right-arrow.svg" />
-              </div>
+          <div className="w-50 h-10 relative flex items-center justify-center group mt-20">
+             <button onClick={() => window.open("https://porfo-waitlist.kickoffpages.com/", "_blank")} className="glowing-btn w-full">
+              <span class='glowing-txt'>G
+                <span class='faulty-letter'>E</span>
+                T ST
+                <span class='faulty-letter'>A</span>
+                <span class='faulty-letter'>R</span>
+                TED
+              </span>
             </button>
           </div>
         </div>

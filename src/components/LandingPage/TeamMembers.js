@@ -42,7 +42,7 @@ function TeamMembers() {
             <img src={member.image} className="rounded-full" />
             <p className="font-medium text-[#DAD5D5] mt-3">{member.name}</p>
             <p className="text-sm opacity-70 mb-3">{member.role}</p>
-            <div className="flex gap-x-6 bg-[rgba(255,255,255,0.04)] px-6 py-3 rounded-full">
+            {/* <div className="flex gap-x-6 bg-[rgba(255,255,255,0.04)] px-6 py-3 rounded-full">
               <button>
                 <img src="/landing-page/facebook.svg" />
               </button>
@@ -52,7 +52,7 @@ function TeamMembers() {
               <button>
                 <img src="/landing-page/twitter.svg" />
               </button>
-            </div>
+            </div> */}
           </div>
         ))}
       </div>

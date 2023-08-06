@@ -24,13 +24,13 @@ function TeamMembers() {
     },
     {
       name: "Sushil Ray",
-      role: "Lead Developer",
+      role: "UX Manager",
       image: "/landing-page/memoji-2.png",
     },
     {
       name: "Chirag Sharma",
-      role: "Lead Developer",
-      image: "/landing-page/memoji-2.png",
+      role: "Tech Lead",
+      image: "/landing-page/chirag.jpeg",
     },
   ];
   return (

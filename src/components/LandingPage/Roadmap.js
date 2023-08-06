@@ -3,11 +3,11 @@ import React from "react";
 function Roadmap() {
   const timelines = [
     {
-      time: "June 2023",
+      time: "August 2023",
       description: "Complete non-custodial wallet with gas saving mechanism, with a base AI model trained for wallet txn.",
     },
     {
-      time: "September 2023",
+      time: "October 2023",
       description: "Trade guidance and assistant alpha version to common publics, tax calculator, airdrops.",
     },
     {
@@ -15,7 +15,7 @@ function Roadmap() {
       description: "Launchpads, pools, arbitrage tools, cross chain compatibility using XCM.",
     },
     {
-      time: "March 2023",
+      time: "March 2024",
       description: "Assistant V2 and automatic copy trading mechanism based on AI recommendation,a utomated airdrops.",
     },
   ];

@@ -69,7 +69,7 @@ function TeamMembers() {
       <div className="grid grid-cols-6 gap-4 md:gap-x-8 md:gap-y-6 xl:gap-x-12 xl:gap-y-8">
         {team?.map((member, index) => (
           <div key={index} className="col-span-3 sm:col-span-2 bg-[rgba(77,74,74,0.27)] rounded-xl flex flex-col items-center py-6">
-            <img src={member.image} className="rounded-full max-w-[30%] min-w-[30%] max-h-[40%]" />
+            <img src={member.image} className="rounded-full max-w-[30%] min-w-[30%] max-h-[50%]" />
             <p className="font-medium text-[#DAD5D5] mt-3">{member.name}</p>
             <p className="text-sm opacity-70 mb-3 text-center">{member.role}</p>
             {/* <div className="flex gap-x-6 bg-[rgba(255,255,255,0.04)] px-6 py-3 rounded-full">

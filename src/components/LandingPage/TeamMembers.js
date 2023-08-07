@@ -18,14 +18,24 @@ function TeamMembers() {
       image: "/landing-page/soneshwar.jpeg",
     },
     {
+      name: "Sarvottam Mishra",
+      role: "CIO",
+      image: "/landing-page/sarvottam.jpeg",
+    },
+    {
       name: "Pritesh Panda",
-      role: "CPO",
+      role: "Head Of Product",
       image: "/landing-page/pritesh.jpeg"
     },
     {
-      name: "Sarvottam Mishra",
-      role: "CIO",
-      image: "/landing-page/memoji-1.png",
+      name: "Chirag Sharma",
+      role: "Head of Technology",
+      image: "/landing-page/chirag.jpeg",
+    },
+    {
+      name: "Pranay Goenka",
+      role: "Head of Marketing",
+      image: "/landing-page/pranay.jpeg",
     },
     {
       name: "Sushil Ray",
@@ -33,34 +43,24 @@ function TeamMembers() {
       image: "/landing-page/sushil.jpeg",
     },
     {
-      name: "Chirag Sharma",
-      role: "Tech Lead",
-      image: "/landing-page/chirag.jpeg",
-    },
-    {
-      name: "Ayush Tripathi",
-      role: "AI Lead",
-      image: "/landing-page/memoji-1.png",
-    },
-    {
       name: "Sushant Shukla",
-      role: "Advisor, CEO The Wasserstoff",
+      role: "Advisor, The Wasserstoff",
       image: "/landing-page/sushant.jpg"
     },
     {
       name: "Rhic Choudhary",
-      role: "Advisor, Head Of Sales Biconomy",
+      role: "Advisor, Biconomy",
       image: "/landing-page/rhic.jpg"
     },
     {
-      name: "Vidhata Trivedi",
-      role: "Advisor, CTO The Wasserstoff",
-      image: "/landing-page/memoji-1.png"
+      name: "Nilesh Vohra",
+      role: "Advisor, Arthur D. Little",
+      image: "/landing-page/nilesh.jpeg",
     },
     {
-      name: "Ankit Khatana",
-      role: "Advisor, COO The Wasserstoff",
-      image: "/landing-page/ankit.jpg"
+      name: "Vidhata Trivedi",
+      role: "Advisor, The Wasserstoff",
+      image: "/landing-page/memoji-1.png"
     }
   ];
   return (

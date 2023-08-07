@@ -67,7 +67,7 @@ function Navbar() {
         <GetEarlyAccessButton />
       </div>
       <div className="flex md:hidden justify-between items-center px-4 sm:px-8">
-        <img src="/logo.png" className="w-35 pt-[30px]" />
+        <img src="/logo.png" className="w-36 pt-[30px]" />
         <img src="/landing-page/hamburger-menu.svg" className="cursor-pointer" onClick={() => setIsOpen(true)} alt="hamburger icon" />
         {isOpen && (
           <>

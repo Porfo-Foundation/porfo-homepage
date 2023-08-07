@@ -50,7 +50,7 @@ function Navbar() {
         <GetStartedModal />
       </UIModal>
       <div className="justify-between items-center max-w-[1740px] mx-auto px-12 hidden md:flex">
-        <img src="/logo.png" className="min-w-30 max-w-[140px] lg:pt-[32px]" />
+        <img src="/logo.png" className="min-w-30 max-w-[140px] pt-[32px]" />
         <div className="flex gap-x-6">
           {navbarLinks?.map((link, index) => (
             <Link
@@ -67,7 +67,7 @@ function Navbar() {
         <GetEarlyAccessButton />
       </div>
       <div className="flex md:hidden justify-between items-center px-4 sm:px-8">
-        <img src="/logo.png" className="w-36 py-4" />
+        <img src="/logo.png" className="w-35 pt-[30px]" />
         <img src="/landing-page/hamburger-menu.svg" className="cursor-pointer" onClick={() => setIsOpen(true)} alt="hamburger icon" />
         {isOpen && (
           <>

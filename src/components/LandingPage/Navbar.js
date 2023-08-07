@@ -49,8 +49,8 @@ function Navbar() {
       <UIModal isOpen={isGetStartedModalOpen} onClose={() => setIsGetStartedModalOpen(false)}>
         <GetStartedModal />
       </UIModal>
-      <div className="justify-between items-center max-w-[1740px] mx-auto px-12 py-4 hidden md:flex">
-        <img src="/logo.png" className="min-w-30 max-w-[140px]" />
+      <div className="justify-between items-center max-w-[1740px] mx-auto px-12 hidden md:flex">
+        <img src="/logo.png" className="min-w-30 max-w-[140px] lg:pt-[32px]" />
         <div className="flex gap-x-6">
           {navbarLinks?.map((link, index) => (
             <Link

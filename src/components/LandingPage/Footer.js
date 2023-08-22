@@ -11,7 +11,7 @@ function Footer() {
             <p>Made Easy</p>
           </div>
           <div className="flex gap-x-5 mt-0 sm:mt-20">
-            <button>
+            <button onClick={() => window.open("https://discord.gg/6z7qBFDJ", "_blank")}>
               <img src="/landing-page/discord-white.svg" />
             </button>
             <button>
@@ -20,7 +20,7 @@ function Footer() {
             <button>
               <img src="/landing-page/facebook-white.svg" />
             </button>
-            <button>
+            <button onClick={() => window.open("https://x.com/0xporfo", "_blank")}>
               <img src="/landing-page/twitter-white.svg" />
             </button>
           </div>

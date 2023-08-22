@@ -34,12 +34,13 @@ function HeroSection() {
         <div className="flex items-center w-full justify-center mt-6 2xl:mt-10">
           <div className="w-50 h-10 relative flex items-center justify-center group mt-20">
              <button onClick={() => window.open("https://porfo-waitlist.kickoffpages.com/", "_blank")} className="glowing-btn w-full">
-              <span class='glowing-txt'>G
-                <span class='faulty-letter'>E</span>
-                T ST
-                <span class='faulty-letter'>A</span>
-                <span class='faulty-letter'>R</span>
-                TED
+              <span class='glowing-txt'>JO
+                <span class='faulty-letter'>I</span>
+                N WA
+                <span class='faulty-letter'>I</span>
+                TL
+                <span class='faulty-letter'>I</span>
+                ST
               </span>
             </button>
           </div>

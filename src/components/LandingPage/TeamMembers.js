@@ -53,9 +53,9 @@ function TeamMembers() {
       image: "/landing-page/rhic.jpg"
     },
     {
-      name: "Nilesh Vohra",
-      role: "Advisor, Arthur D. Little",
-      image: "/landing-page/nilesh.jpeg",
+      name: "Ankit Khatana",
+      role: "COO, The Wasserstoff",
+      image: "/landing-page/ankit.jpg",
     },
     {
       name: "Vidhata Trivedi",

@@ -1,0 +1,55 @@
+.project{
+    display: flex;
+    width: 80vw;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px 100px 50px 100px;
+    border-top: 1px solid rgb(201, 201, 201);
+    cursor: pointer;
+    transition: all 0.2s;
+    color: white;
+
+    h2{
+        font-size: 10vw;
+        margin: 0px;
+        font-weight: 400;
+        transition: all 0.4s;
+    }
+
+    p{
+        transition: all 0.4s;
+        font-weight: 300;
+    }
+
+    &:last-of-type{
+        border-bottom: 1px solid rgb(201, 201, 201);
+    }
+
+    &:hover{
+        opacity: 0.5;
+
+        h2{
+            transform: translateX(-10px);
+        }
+
+        p{
+            transform: translateX(10px);
+        }
+    }
+    .hoverMoveRightContainer {
+        &:hover {
+          .hover-move-right {
+            /* Define styles for the hover-move-right class here */
+            /* For example: */
+            transform: translateX(10px);
+            /* Add any other styles you want to apply when the parent div is hovered */
+          }
+        }
+      }
+      
+      .hover-move-right {
+        /* Define initial styles for the hover-move-right class here */
+        /* For example: */
+        transition: transform 0.3s ease;
+      }
+}

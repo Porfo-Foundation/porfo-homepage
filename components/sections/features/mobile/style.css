@@ -1,0 +1,19 @@
+.slick-prev {
+    left: 15% !important;
+    z-index: 1;
+    scale: 1.5;
+    opacity: 20%;
+}
+  .slick-next {
+    right: 15% !important;
+    z-index: 1;
+    scale: 1.5;
+    opacity: 20%;
+}
+
+.slick-slide div{
+  display: flex;
+  place-items: center;
+  margin: auto;
+  
+}

@@ -27,6 +27,7 @@ import DownloadMobile from '@/components/sections/download/DownloadMobile';
 import KeyFeaturesMobile from '@/components/sections/key/KeyFeaturesMobile';
 import SlideshowMobile from '@/components/reusable/slideshow/SlideshowMobile';
 import NavbarMobile from '@/components/reusable/navbar/NavbarMobile';
+import Waitlist from '@/components/reusable/waitlist/waitlist';
 // import Milestones from '@/components/sections/milestones/Milestones';
 
 const imageDivTranslate = {
@@ -53,6 +54,7 @@ export default function Home() {
   const [bgColor, setBgColor] = useState('bg-black');
   const [isLoading, setIsLoading] = useState(true);
   const [hasLoaded, setHasLoaded] = useState(false);
+  const [waitlistPage,setWaitlistPage] = useState(false);
 
   const primary = <p>From seamless onboarding to smart trading with <span className='text-[#7a50bc]'>AI driven insights</span>, we&apos;ve got you covered. Be ahead of the market with Porfo&apos;s <span className='text-[#7a50bc]'>AI assistant</span>.</p>
   const secondary = <p>As a <span className='text-[#7a50bc]'>smart wallet</span> and <span className='text-[#7a50bc]'>investment assistant</span>, Porfo simplifies the management of digital assets, making it easy for beginners to navigate the crypto landscape.</p>
@@ -110,53 +112,59 @@ export default function Home() {
 }, []);
 
   return (
-    <div className={`${bgColor}`}>
-      <div className='block md:hidden'><NavbarMobile/></div>
-      {hasLoaded && 
-        (<div className='hidden md:block'>
-          <motion.div
-            variants={imageDivTranslate}
-            initial='initial'
-            animate='enter'
-            exit='exit'
-            zIndex='9999'
-          >
-              <Navbar/>
-          </motion.div>
-            
-        </div>)
-      }
-      
-      <div className='overflow-x-hidden'>
-          <div className='block md:hidden'><HeroMobile/></div>
-          <div className='hidden md:block'><Hero/></div>
-      </div>
-      <div className='overflow-x-hidden'>
-          <Description tag='About Porfo' content={primary}/>
-          <div className='hidden md:block'><Features/></div>
-          <div className='block md:hidden'><FeaturesMobile/></div>
+    
+      waitlistPage ?
+        <div> 
+          <Waitlist/>
+        </div> :
+        <div className={`${bgColor}`}>
+          <div className='block md:hidden'><NavbarMobile/></div>
+          {hasLoaded && 
+            (<div className='hidden md:block'>
+              <motion.div
+                variants={imageDivTranslate}
+                initial='initial'
+                animate='enter'
+                exit='exit'
+                zIndex='9999'
+              >
+                  <Navbar setWaitlistPage={setWaitlistPage}/>
+              </motion.div>
+                
+            </div>)
+          }
           
-          <Description tag='How we differ' content={secondary}/>
-      </div>
-      
-      
-      <div className='hidden md:block'><KeyFeatures/></div>      
-      <div className='block md:hidden'><KeyFeaturesMobile/></div>
-      
-      <div className='overflow-x-hidden'>
-        <div className='hidden md:block'><Slideshow/></div>
-        <div className='block md:hidden'><SlideshowMobile/></div>
-        <Skills/>
-      </div>
-      
-      <div className='overflow-x-hidden'>
-        <div className='hidden md:block'><HighlightMain half={true} hideButton={false}/></div>
-      
-        <div className='hidden md:block'><Download/></div>
-        <div className='block md:hidden'><DownloadMobile/></div>
-      </div>
-      
+          <div className='overflow-x-hidden'>
+              <div className='block md:hidden'><HeroMobile/></div>
+              <div className='hidden md:block'><Hero/></div>
+          </div>
+          <div className='overflow-x-hidden'>
+              <Description tag='About Porfo' content={primary}/>
+              <div className='hidden md:block'><Features/></div>
+              <div className='block md:hidden'><FeaturesMobile/></div>
+              
+              <Description tag='How we differ' content={secondary}/>
+          </div>
+          
+          
+          <div className='hidden md:block'><KeyFeatures/></div>      
+          <div className='block md:hidden'><KeyFeaturesMobile/></div>
+          
+          <div className='overflow-x-hidden'>
+            <div className='hidden md:block'><Slideshow/></div>
+            <div className='block md:hidden'><SlideshowMobile/></div>
+            <Skills/>
+          </div>
+          
+          <div className='overflow-x-hidden'>
+            <div className='hidden md:block'><HighlightMain half={true} hideButton={false}/></div>
+          
+            <div className='hidden md:block'><Download/></div>
+            <div className='block md:hidden'><DownloadMobile/></div>
+          </div>
+          
 
-    </div>
+        </div>
+    
   )
 }

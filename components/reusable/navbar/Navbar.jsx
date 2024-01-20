@@ -15,6 +15,22 @@ const Navbar = ({setWaitlistPage}) => {
     const [buttonBg, setButtonBg] = useState('bg-[#7a50bc]');
     const [buttonText, setButtonText] = useState('text-white');
 
+    const navLinks = [
+        {
+          name: "Home",
+          link: "/#home",
+        },
+        {
+          name: "Features",
+          link: "/?value=features#feature",
+        },
+        {
+          name: "Docs",
+          link: "/?value=Docs#doc",
+        },
+       
+      ];
+
 
     useEffect(() => {
 
@@ -49,7 +65,7 @@ const Navbar = ({setWaitlistPage}) => {
                     </div>
                     <div className={`flex gap-6 items-center ${textColor}`}>
                         <div className="cursor-pointer hover:text-neutral-200 transition">Home</div>
-                        <div className="cursor-pointer hover:text-neutral-200 transition">Features</div>
+                        <div className="cursor-pointer hover:text-neutral-200 transition"><a href="#features">Features</a></div>
                         <div className="cursor-pointer hover:text-neutral-200 transition"><a target="blank" href="https://docs.porfo.app">Docs</a></div>
                         {/* <div className="hover:opacity-80 cursor-pointer">
                             <div className={`${buttonBg} ${buttonText} p-1.5 rounded-full pl-5 pr-5 text-sm transition-colors`}>

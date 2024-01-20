@@ -1,6 +1,7 @@
 import { Montserrat } from 'next/font/google'
 import './globals.css'
 import Navbar from '@/components/reusable/navbar/Navbar'
+import Web3Modal from '@/components/Web3Model/Web3Model'
 
 const font = Montserrat({ subsets: ['latin'] })
 
@@ -39,8 +40,8 @@ export default function RootLayout({ children }) {
         <meta property="twitter:image" content={"/logo-full.png"} />
         <link rel="icon" href="/favicon.png" />
       </head>
-      <body className={`${font.className} no-scrollbar bg-black`}>{children}
-        
+      <body className={`${font.className} no-scrollbar bg-black`}>
+        <Web3Modal children={children}/>
       </body>
     </html>
   )

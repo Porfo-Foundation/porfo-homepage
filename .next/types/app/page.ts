@@ -1,4 +1,4 @@
-// File: /workspaces/porfo/app/page.js
+// File: C:\Users\Lenovo\Downloads\porfo-homepage-web3 (1)\porfo-homepage\app\page.js
 import * as entry from '../../../app/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

@@ -5,7 +5,7 @@ import { useScrollPosition } from "@/hooks/useScrollPosition";
 import Container from "../../central/Container";
 import { useEffect, useState } from "react";
 
-const Navbar = () => {
+const Navbar = ({setWaitlistPage}) => {
     const scrollPosition = useScrollPosition();
     
     const [bgColor, setBgColor] = useState('bg-[#1f1f1f]');
@@ -50,10 +50,15 @@ const Navbar = () => {
                     <div className={`flex gap-6 items-center ${textColor}`}>
                         <div className="cursor-pointer hover:text-neutral-200 transition">Home</div>
                         <div className="cursor-pointer hover:text-neutral-200 transition">Features</div>
-                        <div className="cursor-pointer hover:text-neutral-200 transition">Docs</div>
-                        <div className="hover:opacity-80 cursor-pointer">
+                        <div className="cursor-pointer hover:text-neutral-200 transition"><a target="blank" href="https://docs.porfo.app">Docs</a></div>
+                        {/* <div className="hover:opacity-80 cursor-pointer">
                             <div className={`${buttonBg} ${buttonText} p-1.5 rounded-full pl-5 pr-5 text-sm transition-colors`}>
                                 Download App
+                            </div>
+                        </div> */}
+                        <div className="hover:opacity-80 cursor-pointer" onClick={()=>{setWaitlistPage(true)}}>
+                            <div className={`${buttonBg} ${buttonText} p-1.5 rounded-full pl-5 pr-5 text-sm transition-colors`}>
+                                Join Waitlist
                             </div>
                         </div>
                     </div>

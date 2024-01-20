@@ -27,7 +27,7 @@ const Features = () => {
     
     return ( 
         
-            <div id="feature" className="flex items-center justify-center">
+            <div id="features" className="flex items-center justify-center">
             
                 <div className = {`
                     w-[90%]

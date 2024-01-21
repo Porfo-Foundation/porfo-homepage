@@ -97,7 +97,7 @@ function Waitlist() {
     <div className="flex h-screen w-full">
       <div
         id="left"
-        className="w-[20%] flex flex-col items-center justify-between bg-[000000]"
+        className="w-[20%] flex flex-col items-center justify-between bg-[#000000]"
       >
         <div className="w-[80%] h-full p-4 flex flex-col justify-between ">
           <div>
@@ -121,7 +121,7 @@ function Waitlist() {
               <div className={`text-2xl text-pur ${logoColor} h-8`}>Chats</div>
               <div
                 className={
-                  "flex h-16 bg-[#191C1C] rounded-2xl items-center p-4 justify-between"
+                  "flex h-16 bg-[#191C1C] rounded-2xl items-center p-4 justify-between text-[#ffffff]"
                 }
               >
                 <div className="bg-[#533482] rounded-md h-8 w-8 flex items-center justify-center">
@@ -218,7 +218,7 @@ function Waitlist() {
           <div id="Middle" className="h-[80%] flex flex-col justify-end">
             <div className="h-[20%] flex">
               <div className="bg-black h-10 w-10 rounded-md flex items-center justify-center">
-                <div className={``}>
+                <div className="overflow-y-auto max-h-[70%]">
                   <img
                     src={"/images/logo_png.png"}
                     height={24}
@@ -260,20 +260,20 @@ function Waitlist() {
                 </div>
               </div>
             </div>
-            <div className="max-h-[70%]">
+            <div className="">
               {messages?.map((msg, index) => {
                 if (msg.role === "assistant") {
                   return (
                     <div className="flex justify-start mt-4" key={index}>
                       <div className="bg-[#191C1C] rounded-2xl p-4">
-                        <div className="text-sm">{msg.content}</div>
+                        <div className="text-sm text-[#ffffff]">{msg.content}</div>
                       </div>
                     </div>
                   );
                 }
                 return (
                   <div className="flex justify-end mt-4" key={index}>
-                    <div className="bg-[#191C1C] rounded-2xl p-4">
+                    <div className="bg-[#191C1C] text-[#ffffff] rounded-2xl p-4">
                       <div className="text-sm">{msg.content}</div>
                     </div>
                   </div>
@@ -307,7 +307,7 @@ function Waitlist() {
 
       <div
         id="right"
-        className="w-[20%]  flex justify-center items-center bg-[000000] "
+        className="w-[20%]  flex justify-center items-center bg-[#000000] "
       >
         <div className="w-[80%] h-full  p-4 flex flex-col justify-between mt-10">
           <div className="text-3xl h-[10%] text-[#B13F60] ">

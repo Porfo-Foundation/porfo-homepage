@@ -207,7 +207,7 @@ function Waitlist() {
               />
             </div>
             <div className="ml-2 mt-1">
-              <div className="text-lg font-bold">Waitlist</div>
+              <div className="text-lg font-bold text-[#B13F60]">Waitlist</div>
               <div className="flex text-xs space-x-1 items-center justify-center text-[#B13F60] ">
                 <p className="rounded-[50%] bg-[#B13F60] h-2 w-2"></p>
                 <p>180</p>
@@ -218,7 +218,7 @@ function Waitlist() {
           <div id="Middle" className="h-[80%] flex flex-col justify-end">
             <div className="h-[20%] flex">
               <div className="bg-black h-10 w-10 rounded-md flex items-center justify-center">
-                <div className="overflow-y-auto max-h-[70%]">
+                <div className="max-h-[70%]">
                   <img
                     src={"/images/logo_png.png"}
                     height={24}
@@ -260,7 +260,8 @@ function Waitlist() {
                 </div>
               </div>
             </div>
-            <div className="">
+            <div className="overflow-hidden">
+            <div className="overflow-y-auto">
               {messages?.map((msg, index) => {
                 if (msg.role === "assistant") {
                   return (
@@ -279,6 +280,7 @@ function Waitlist() {
                   </div>
                 );
               })}
+            </div>
             </div>
           </div>
           <div id="bottom" className="h-[10%] flex justify-center items-center">

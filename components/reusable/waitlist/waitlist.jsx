@@ -164,7 +164,7 @@ function Waitlist() {
               })}
             </div>
           </div>
-          <div className="flex flex-col h-44 bg-[#191C1C] rounded-2xl p-4">
+          <div className="flex flex-col h-44 bg-[#191C1C] rounded-2xl p-4 w-[100%] truncate ... ">
             <div className="flex h-[50%] items-center space-x-2">
               <div className="flex items-center justify-center h-12 w-12 bg-[#533482] rounded-[50%]">
                 <div>
@@ -260,8 +260,8 @@ function Waitlist() {
                 </div>
               </div>
             </div>
-            <div className="overflow-hidden">
-            <div className="overflow-y-auto">
+            <div className="overflow-y-scroll">
+            {/* <div className="overflow-y-scroll"> */}
               {messages?.map((msg, index) => {
                 if (msg.role === "assistant") {
                   return (
@@ -281,7 +281,7 @@ function Waitlist() {
                 );
               })}
             </div>
-            </div>
+            {/* </div> */}
           </div>
           <div id="bottom" className="h-[10%] flex justify-center items-center">
             <div className="bg-slate-800 rounded-xl h-10 w-full flex justify-between items-center">

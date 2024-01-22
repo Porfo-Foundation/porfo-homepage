@@ -20,7 +20,7 @@ const DownloadMobile = ({
 
     useEffect(() => {
         const timeout = setTimeout(() => {
-            setIsVisible(true);
+            // setIsVisible(true);
         }, 2200);
 
         return () => {

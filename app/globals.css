@@ -43,4 +43,10 @@ body {
     rgb(var(--background-start-rgb));
 }
 
+/* .overflow-scroll::-webkit-scrollbar { 
+  display: none; 
+} 
 
+.overflow-scroll::-moz-scrollbars {
+  display: none;
+} */

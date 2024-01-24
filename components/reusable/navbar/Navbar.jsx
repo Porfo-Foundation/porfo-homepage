@@ -4,10 +4,11 @@
 import { useScrollPosition } from "@/hooks/useScrollPosition";
 import Container from "../../central/Container";
 import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 
 const Navbar = ({setWaitlistPage}) => {
     const scrollPosition = useScrollPosition();
-    
+    const router = useRouter();
     const [bgColor, setBgColor] = useState('bg-[#1f1f1f]');
     const [bgOpacity, setBgOpacity] = useState('bg-opacity-0');
     const [logoColor, setLogoColor] = useState('text-[#7a50bc]');
@@ -72,7 +73,7 @@ const Navbar = ({setWaitlistPage}) => {
                                 Download App
                             </div>
                         </div> */}
-                        <div className="hover:opacity-80 cursor-pointer" onClick={()=>{setWaitlistPage(true)}}>
+                        <div className="hover:opacity-80 cursor-pointer" onClick={()=>{router.push('/waitlist')}}>
                             <div className={`${buttonBg} ${buttonText} p-1.5 rounded-full pl-5 pr-5 text-sm transition-colors`}>
                                 Join Waitlist
                             </div>

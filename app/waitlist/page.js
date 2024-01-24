@@ -4,10 +4,10 @@ import { Connector, useConnect } from 'wagmi'
 import { useAccount, useDisconnect, useEnsAvatar, useEnsName } from 'wagmi'
 import { useEffect, useRef, useState } from "react";
 import { WaitlistBot, connectWallet, getUserName } from "@/utils/apis";
-import MessagesBox from './MessagesBox';
+import MessagesBox from '@/components/reusable/waitlist/MessagesBox';
 // import { local } from "web3modal";
 
-function Waitlist() {
+function page() {
   const [logoColor, setLogoColor] = useState("text-[#B13F60]");
   const [accessToken, setAccessToken] = useState(
     localStorage.getItem("accessToken")
@@ -27,7 +27,7 @@ function Waitlist() {
 
   const handleClick = () => {
     console.log("ref current",ref.current);
-    ref.current?.scrollIntoView({block: "center"});
+    ref.current?.scrollIntoView({block: "end", behavior:"smooth"});
   };
   // useEffect(() => {
   //   console.log(connectors, "::::::connectors");
@@ -271,7 +271,7 @@ function Waitlist() {
                 </div>
               </div>
             </div>
-            <MessagesBox messages={messages}/>
+            <MessagesBox messages={messages} reference={ref}/>
             {/* </div> */}
           </div>
           <div id="bottom" className="h-[10%] flex justify-center items-center">
@@ -344,4 +344,4 @@ function Waitlist() {
   );
 }
 
-export default Waitlist;
+export default page;

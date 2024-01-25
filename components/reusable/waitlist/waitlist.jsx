@@ -22,6 +22,7 @@ function Waitlist() {
   const { disconnect } = useDisconnect()
   const { data: ensName } = useEnsName({ address })
   const { data: ensAvatar } = useEnsAvatar({ name: ensName })
+  const {dappList, setDappList} = useState()
 
   const ref = useRef(null);
 
@@ -29,59 +30,74 @@ function Waitlist() {
     console.log("ref current",ref.current);
     ref.current?.scrollIntoView({block: "center"});
   };
-  // useEffect(() => {
-  //   console.log(connectors, "::::::connectors");
-  // }, []);
-
+ 
   const getAccessToken = async (connector) => {
-    connect({ connector });
-    const data = await connectWallet();
-    console.log(data, "::::::data");
-
-    setAccessToken(data?.accessToken);
-    console.log(accessToken, "::::::accessToken");
-    localStorage.setItem("accessToken", data?.accessToken);
-    setMessages([]);
-    localStorage.setItem("messages", JSON.stringify([]));
-    return data?.accessToken;
+    try {
+      const connectedWallet = await connect({ connector });
+      const accessToken = await connectWallet();
+  
+      setAccessToken(accessToken);
+      localStorage.setItem("accessToken", accessToken);
+  
+      setMessages([]);
+      localStorage.setItem("messages", JSON.stringify([]));
+  
+      return accessToken;
+    } catch (error) {
+      console.error("Error getting access token:", error);
+      throw error; // Rethrow the error for proper error handling
+    }
   };
+  
   const handleConnect = async (connector) => {
     try {
-      getAccessToken(connector).then(async (accessToken) => {
-        const userProfileData = await getUserName(accessToken);
-        console.log(userProfileData?.pnsProfile, "::::::userProfileData");
-        setUserProfile(userProfileData?.pnsProfile);
-        const firstMsg = [
+      const accessToken = await getAccessToken(connector);
+      const userProfileData = await getUserName(accessToken);
+  
+      console.log(userProfileData?.pnsProfile, "::::::userProfileData");
+      setUserProfile(userProfileData?.pnsProfile);
+  
+      const firstMsg = [
+        {
+          content: "Hi",
+          role: "user",
+        },
+      ];
+  
+      const data = await WaitlistBot(firstMsg, accessToken);
+      setMessages([data]);
+    } catch (error) {
+      console.error("Error connecting wallet:", error);
+      // alert("Error connecting wallet"); // You may uncomment this line if needed
+    }
+  };
+  
+
+  const sendMessage = async () => {
+    try {
+      if (msg) {
+        const updatedMessages = [
+          ...messages,
           {
-            content: "Hi",
+            content: msg,
             role: "user",
           },
         ];
-        const data = await WaitlistBot(firstMsg, accessToken);
-        setMessages([data]);
-      });
+  
+        setMessages(updatedMessages);
+        localStorage.setItem("messages", JSON.stringify(updatedMessages));
+  
+        setMsg("");
+        const data = await WaitlistBot(updatedMessages, accessToken);
+        setMessages([...updatedMessages, { content: msg, role: "user" }, data]);
+        handleClick();
+      }
     } catch (error) {
-      // alert("Error connecting wallet");
-      console.error("Error connecting wallet:", error);
+      console.error("Error sending message:", error);
+      // Handle the error (e.g., display a user-friendly message)
     }
   };
-
-  const sendMessage = async () => {
-    if (msg) {
-      setMessages([
-        ...messages,
-        {
-          content: msg,
-          role: "user",
-        },
-      ]);
-      localStorage.setItem("messages", JSON.stringify(messages));
-      setMsg("");
-      const data = await WaitlistBot(messages, accessToken);
-      setMessages([...messages, { content: msg, role: "user" }, data]);
-      handleClick();
-    }
-  };
+  
   console.log(userProfile, "::::::userProfile");
   const categories = [
     { img: "/images/house.png", key: "Home" },
@@ -95,13 +111,18 @@ function Waitlist() {
     { img: "/images/walletConnect.png", key: "WalletConnect" },
   ];
   const dAppsList = [
-    { img: "/images/pancake.png", key: "Pancake Swap" },
-    { img: "/images/Uniswap.png", key: "Uniswap" },
     { img: "/images/ethereum.png", key: "Ethereum" },
-    { img: "/images/OpenSea.png", key: "Opensea" },
-    { img: "/images/1inch.png", key: "1inch" },
     { img: "/images/polygon.png", key: "Polygon" },
     { img: "/images/solana.png", key: "Solana" },
+    { img: "/images/OpenSea.png", key: "BSC" },
+    { img: "/images/bsc-logo.png", key: "Bitcoin" },
+    { img: "/images/arbitrum-logo.png", key: "Arbitrum" },
+    { img: "/images/optimism-logo.png", key: "Optimism" },
+    { img: "/images/base-logo.jpeg", key: "Base" },
+    { img: "/images/avalanche-logo.png", key: "Avalanche" },
+    { img: "/images/sui-logo.png", key: "Sui" },
+    { img: "/images/aptos-logo.png", key: "Aptos" },
+    { img: "/images/monad-logo.png", key: "Monad" },
   ];
 
   return (
@@ -308,6 +329,7 @@ function Waitlist() {
           </div>
           <div className="text-l h-[60%] ">
             {dAppsList.map((item, index) => {
+              console.log(dAppsList,":::dapplist")
               return (
                 <div key={index} className="flex mb-4 items-center">
                   <div className=" rounded-lg">

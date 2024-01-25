@@ -102,13 +102,18 @@ function page() {
     { img: "/images/walletConnect.png", key: "WalletConnect" },
   ];
   const dAppsList = [
-    { img: "/images/pancake.png", key: "Pancake Swap" },
-    { img: "/images/Uniswap.png", key: "Uniswap" },
     { img: "/images/ethereum.png", key: "Ethereum" },
-    { img: "/images/OpenSea.png", key: "Opensea" },
-    { img: "/images/1inch.png", key: "1inch" },
     { img: "/images/polygon.png", key: "Polygon" },
     { img: "/images/solana.png", key: "Solana" },
+    { img: "/images/OpenSea.png", key: "BSC" },
+    { img: "/images/bsc-logo.png", key: "Bitcoin" },
+    { img: "/images/arbitrum-logo.png", key: "Arbitrum" },
+    { img: "/images/optimism-logo.png", key: "Optimism" },
+    { img: "/images/base-logo.jpeg", key: "Base" },
+    { img: "/images/avalanche-logo.png", key: "Avalanche" },
+    { img: "/images/sui-logo.png", key: "Sui" },
+    { img: "/images/aptoss-logo.png", key: "Aptos" },
+    { img: "/images/monad-logo.jpeg", key: "Monad" },
   ];
 
   return (
@@ -195,7 +200,7 @@ function page() {
                 </div>
               </div>
               <div>
-                <div> {userProfile ? userProfile.userName : "Anonyms"}</div>
+                <div> {userProfile ? userProfile.userName : "Anonymous"}</div>
                 <div className="text-[#999999] text-sm">
                   {userProfile ? userProfile.pointer : "0x"}
                 </div>
@@ -311,13 +316,13 @@ function page() {
       >
         <div className="w-[80%] h-full  p-4 flex flex-col justify-between mt-10">
           <div className="text-3xl h-[10%] text-[#B13F60] ">
-            Integrated chains
+            Integrated dApps
           </div>
-          <div className="text-l h-[60%] ">
+          <div className="text-l h-[60%] overflow-y-auto ">
             {dAppsList.map((item, index) => {
               return (
                 <div key={index} className="flex mb-4 items-center">
-                  <div className=" rounded-lg">
+                  <div className={`rounded-3xl overflow-hidden ${item.key === 'Base' ? 'base-logo' : ''}`}>
                     <img
                       src={`${item?.img}`}
                       height={40}

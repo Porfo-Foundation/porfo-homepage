@@ -46,6 +46,7 @@ export const getUserName = async (accessToken) => {
 };
 
 export const WaitlistBot = async (messages, accessToken) => {
+  console.log(accessToken,":::access token")
   const headers = new Headers();
   headers.append("Content-Type", "application/json");
   headers.append("accessToken", accessToken);

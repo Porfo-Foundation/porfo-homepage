@@ -1,5 +1,4 @@
 "use client";
-
 import { Connector, useConnect } from 'wagmi'
 import { useAccount, useDisconnect, useEnsAvatar, useEnsName } from 'wagmi'
 import { useEffect, useRef, useState } from "react";
@@ -9,47 +8,52 @@ import MessagesBox from '@/components/reusable/waitlist/MessagesBox';
 
 function page() {
   const [logoColor, setLogoColor] = useState("text-[#B13F60]");
-  const [accessToken, setAccessToken] = useState(
-    localStorage.getItem("accessToken")
-  );
+  const [accessToken, setAccessToken] = useState(null);
   const [userProfile, setUserProfile] = useState(null);
-  const [messages, setMessages] = useState(
-    JSON.parse(localStorage.getItem("messages")) || []
-  );
+  const [messages, setMessages] = useState([]);
   const [msg, setMsg] = useState("");
-  const { connectors, connect } = useConnect()
-  const { address, isConnected } = useAccount()
-  const { disconnect } = useDisconnect()
-  const { data: ensName } = useEnsName({ address })
-  const { data: ensAvatar } = useEnsAvatar({ name: ensName })
+  const { connectors, connect } = useConnect();
+  const { address, isConnected } = useAccount();
+  const { disconnect } = useDisconnect();
+  const { data: ensName } = useEnsName({ address });
+  const { data: ensAvatar } = useEnsAvatar({ name: ensName });
 
   const ref = useRef(null);
 
+  useEffect(() => {
+    try{
+      if (typeof window !== "undefined"){
+        console.log("window: ", window);
+        const storedAccessToken = window?.localStorage.getItem("accessToken");
+        const storedMessages = JSON.parse(window?.localStorage.getItem("messages"));
+        if (storedAccessToken && storedMessages){
+          setAccessToken(storedAccessToken);
+          setMessages(storedMessages);
+        }
+      }
+    }catch(err){
+      console.error(err);
+    }
+  }, []); 
+
   const handleClick = () => {
-    console.log("ref current",ref.current);
-    ref.current?.scrollIntoView({block: "end", behavior:"smooth"});
+    ref.current?.scrollIntoView({ block: "end", behavior: "smooth" });
   };
-  // useEffect(() => {
-  //   console.log(connectors, "::::::connectors");
-  // }, []);
 
   const getAccessToken = async (connector) => {
     connect({ connector });
     const data = await connectWallet();
-    console.log(data, "::::::data");
-
     setAccessToken(data?.accessToken);
-    console.log(accessToken, "::::::accessToken");
     localStorage.setItem("accessToken", data?.accessToken);
     setMessages([]);
     localStorage.setItem("messages", JSON.stringify([]));
     return data?.accessToken;
   };
+
   const handleConnect = async (connector) => {
     try {
       getAccessToken(connector).then(async (accessToken) => {
         const userProfileData = await getUserName(accessToken);
-        console.log(userProfileData?.pnsProfile, "::::::userProfileData");
         setUserProfile(userProfileData?.pnsProfile);
         const firstMsg = [
           {
@@ -61,27 +65,30 @@ function page() {
         setMessages([data]);
       });
     } catch (error) {
-      // alert("Error connecting wallet");
       console.error("Error connecting wallet:", error);
     }
   };
 
   const sendMessage = async () => {
     if (msg) {
-      setMessages([
+      const updatedMessages = [
         ...messages,
         {
           content: msg,
           role: "user",
         },
-      ]);
-      localStorage.setItem("messages", JSON.stringify(messages));
+      ];
+
+      setMessages(updatedMessages);
+      localStorage.setItem("messages", JSON.stringify(updatedMessages));
+
       setMsg("");
-      const data = await WaitlistBot(messages, accessToken);
-      setMessages([...messages, { content: msg, role: "user" }, data]);
+      const data = await WaitlistBot(updatedMessages, accessToken);
+      setMessages([...updatedMessages, { content: msg, role: "user" }, data]);
       handleClick();
     }
   };
+
   console.log(userProfile, "::::::userProfile");
   const categories = [
     { img: "/images/house.png", key: "Home" },

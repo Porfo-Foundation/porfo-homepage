@@ -55,7 +55,6 @@ export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
   const [hasLoaded, setHasLoaded] = useState(false);
   const [waitlistPage,setWaitlistPage] = useState(false);
-
   const primary = <p>From seamless onboarding to smart trading with <span className='text-[#7a50bc]'>AI driven insights</span>, we&apos;ve got you covered. Be ahead of the market with Porfo&apos;s <span className='text-[#7a50bc]'>AI assistant</span>.</p>
   const secondary = <p>As a <span className='text-[#7a50bc]'>smart wallet</span> and <span className='text-[#7a50bc]'>investment assistant</span>, Porfo simplifies the management of digital assets, making it easy for beginners to navigate the crypto landscape.</p>
 
